@@ -23,7 +23,7 @@ def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
 
 def take_times(size, samples_by_size):
     samples = []
-    for i in range(samples_by_size):
+    for _ in range(samples_by_size):
         samples.append(data_generator.get_random_list(size))
 
     return [
