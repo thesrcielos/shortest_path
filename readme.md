@@ -1,8 +1,12 @@
-# Twisted Sort
+# About this repo
+
+Simple python project to show a way to take experiental execution time to compare a set of algorithms (three in this case) in fair way.
+
+## Twisted Sort
 
 First even then odd sorting algorithms.
 
-## Problem statement
+### Problem statement
 ​
 The sample problem is to take a list of integers with at least one element and sort them with the following criteria:
 
@@ -10,7 +14,7 @@ The sample problem is to take a list of integers with at least one element and s
 * The even numbers should be sorted in ascending order, and the odd numbers should be sorted in descending order
 * The algorithm will only sort positive numbers
 
-# Examples
+### Examples
 
 * For `3 1 9` the output should be `9 3 1`
 
@@ -37,10 +41,23 @@ Python 3.11.0
 * To activate it:`source env/bin/activate`
 * To install dependencies: `pip3 install -r requirements.txt`
 * To run unit testing: `./test.sh`
-* To try a default example, run: `: ./run.sh`. In the file ./run.sh is just an example, you can modify it.
+* To try a default example, run: `: ./run.sh`. In the file ./run.sh is just an example, you can modify it. Theck the `app.py` file to get to understand how it works.
 
+# Current coverage
 
-# Selected solution
+```
+Name                            Stmts   Miss  Cover
+---------------------------------------------------
+test/__init__.py                    0      0   100%
+test/test_algorithms.py            24      1    96%
+test/test_data_generator.py        29      1    97%
+twistedsort/__init__.py             0      0   100%
+twistedsort/algorithms.py          27      3    89%
+twistedsort/constants.py            2      0   100%
+twistedsort/data_generator.py       9      1    89%
+---------------------------------------------------
+TOTAL                              91      6    93%
+```
 
 # Code beautifier
 This code has been beautify using black: https://github.com/psf/black. 
