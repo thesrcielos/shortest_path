@@ -45,6 +45,8 @@ Python 3.11.0
 
 # Current coverage
 
+Make sure you have "coverage" in your requirements.txt file and run pip install. Then run `coverage run -m unittest discover` and after that run `coverage report` to get the following table:
+
 ```
 Name                            Stmts   Miss  Cover
 ---------------------------------------------------
