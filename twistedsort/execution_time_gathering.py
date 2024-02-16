@@ -9,6 +9,7 @@ def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
     return_table = []
 
     for size in range(minimum_size, maximum_size + 1, step):
+        print("Processing size: " + str(size))
         table_row = [size]
         times = take_times(size, samples_by_size)
         return_table.append(table_row + times)
