@@ -1,8 +1,8 @@
 import time
 
-from twistedsort import algorithms
-from twistedsort import constants
-from twistedsort import data_generator
+from shortestpath import algorithms
+from shortestpath import constants
+from shortestpath import data_generator
 
 
 def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
@@ -25,12 +25,14 @@ def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
 def take_times(size, samples_by_size):
     samples = []
     for _ in range(samples_by_size):
-        samples.append(data_generator.get_random_list(size))
+        samples.append(data_generator.get_random_graph(size))
 
+    sample1 = take_time_for_algorithm(samples, algorithms.bellman_ford)
     return [
-        take_time_for_algorithm(samples, algorithms.split_and_sorted_approach),
-        take_time_for_algorithm(samples, algorithms.no_split_and_sorted_approach),
-        take_time_for_algorithm(samples, algorithms.full_sort_and_iterate_approach),
+        sample1[0],
+        sample1[1],
+        take_time_for_algorithm(samples, algorithms.dijkstra)[1],
+        take_time_for_algorithm(samples, algorithms.a_star)[1],
     ]
 
 
@@ -39,13 +41,14 @@ def take_times(size, samples_by_size):
 """
 
 
-def take_time_for_algorithm(samples_array, sorting_approach):
+def take_time_for_algorithm(samples_array, shortest_approach):
     times = []
-
+    m = 0
     for sample in samples_array:
+        graph, start, goal, m = sample
         start_time = time.time()
-        sorting_approach(sample.copy())
+        shortest_approach(graph, start, goal)
         times.append(int(constants.TIME_MULTIPLIER * (time.time() - start_time)))
 
     times.sort()
-    return times[len(times) // 2]
+    return [m, times[len(times) // 2]]
