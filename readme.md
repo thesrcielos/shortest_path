@@ -32,6 +32,43 @@ Python 3.11.0
 * To run unit testing: `./test.sh`
 * To try a default example, run: `: ./run.sh`. In the file ./run.sh is just an example, you can modify it. Theck the `app.py` file to get to understand how it works.
 
+# Visualization
+
+## Comparison Bellman Ford, Dijsktra and A*
+
+| Size | # Relations | Bellman Ford (Time, Memory) | Dijkstra (Time, Memory) | A* (Time, Memory) |
+|------|------------|----------------------------------|----------------------------|-------------------------|
+| 40   | 77         | (21498, 1904)                   | (0, 2960)                  | (0, 4832)               |
+| 60   | 177        | (99945, 2928)                   | (0, 5072)                  | (1562, 8584)            |
+| 80   | 294        | (246390, 3920)                  | (1576, 7664)               | (1577, 11656)           |
+| 100  | 495        | (594242, 4944)                  | (4367, 10512)              | (3228, 17472)           |
+| 120  | 658        | (1271239, 5904)                 | (6527, 13776)              | (8009, 21248)           |
+
+
+![](img/s1.png)
+
+
+![](img/m1.png)
+
+## Comparison Dijsktra and A*
+
+| Size | # Relations | Dijkstra (Time, Memory) | A* (Time, Memory) |
+|------|------------|------------------------------|-------------------------|
+| 100  | 506        | (4947, 10480)                | (4917, 17440)           |
+| 150  | 1056       | (23287, 17936)               | (25482, 26128)          |
+| 200  | 1845       | (43083, 26024)               | (45238, 40072)          |
+| 250  | 2938       | (51528, 35432)               | (56606, 50680)          |
+| 300  | 4398       | (111062, 45028)              | (127666, 61476)         |
+| 350  | 6053       | (126326, 53668)              | (138774, 80524)         |
+| 400  | 7762       | (244742, 64484)              | (275755, 92540)         |
+| 450  | 10555      | (386637, 73996)              | (394791, 103212)        |
+| 500  | 12342      | (715572, 83436)              | (872096, 113852)        |
+
+![](img/s2.png)
+
+
+![](img/m2.png)
+
 # Current coverage
 
 Make sure you have "coverage" in your requirements.txt file and run pip install. Then run `coverage run -m unittest discover` and after that run `coverage report` to get the following table:
