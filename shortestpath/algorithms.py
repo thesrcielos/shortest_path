@@ -19,7 +19,7 @@ def bellman_ford(adjList, start, goal):
             for neighbor, weight in adjList[i]:
                 distance = distances[i] + weight
                 if distances[neighbor] > distance:
-                    return None
+                    return []
 
     return rebuild_path(prev, start, goal)
 
