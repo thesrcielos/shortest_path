@@ -45,6 +45,7 @@ def dijkstra(adjList, start, goal):
                 heapq.heappush(pq, (distance, neighbor))
                 prev[neighbor] = vertice
     
+    print("Not path Found")
     return []
 
 def heuristic(a, b):
@@ -70,6 +71,7 @@ def a_star(adjList, start, goal):
                 heapq.heappush(pq, (priority, neighbor))
                 prev[neighbor] = vertice
 
+    print("Not path Found")
     return []
 
 def rebuild_path(paths, start, goal):
@@ -79,6 +81,7 @@ def rebuild_path(paths, start, goal):
             path.append(current)
             current = paths[current]
             if current == None:
+                print("Not path Found")
                 return []
         path.append(start)
         return path[::-1]
