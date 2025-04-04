@@ -41,7 +41,7 @@ def bfs_path(adj_list, start, end, limit):
         visited.add(node)
         
         if node == end:
-            return # Se encontró el destino
+            return True
         
         for neighbor,_ in adj_list[node]:
             if neighbor not in visited:
@@ -54,6 +54,7 @@ def bfs_path(adj_list, start, end, limit):
     if closest_path is not None:
         last_node = closest_path[-1]
     adj_list[last_node].append([end, random.randint(0, limit)])
+    return False
 
 
 def get_random_x(limit=constants.MAX_VALUE):
